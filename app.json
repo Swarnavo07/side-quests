@@ -29,6 +29,14 @@
     "plugins": [
       "expo-router",
       [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "When in use",
+          "locationAlwaysAndWhenInUsePermission": "Always and when in use",
+          "locationAlwaysPermission": "Always"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",

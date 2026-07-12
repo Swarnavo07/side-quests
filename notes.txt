@@ -1,2 +1,1 @@
-i'll be keeping a tab of the bugs and features i want to add in the app
-day 4 -
+try with stack and tabs
