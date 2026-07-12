@@ -37,6 +37,6 @@ export const useUserSync = () => {
              .select("is_admin")
              .single();
                 
-                setIsAdmnin(newUser?.is_admin ?? false);
+            setIsAdmnin(newUser?.is_admin ?? false);
     }
 };
