@@ -1,3 +1,4 @@
+#thoughts on my first project on css
 this was my very first project working with css.
 this was a collaborative project. one of my friends are building this website and he told me if i could add the shopping cart feature along with the necessary additions like icons, etc.
 so i took up the challenge and took me about 4 hours to get the hold of it.
