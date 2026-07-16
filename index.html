@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gramina Organic Farm - Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="#"><img  id="logo" src="https://m.media-amazon.com/images/X/bxt1/M/7bxt1BNBPAqxnc0._SL256_QL100_FMwebp_.png" alt="" />Gramina</a>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="contact.html" target="_blank">Contact</a>
+      </nav>
+      <a class="cta-btn" href="contact.html" target="_blank">Order Now</a>
+      <button class="cart-icon-btn" onclick="toggleCart()"> 🛒 <span id="cart-count">0
+      </span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Farm-to-Table Natural Goodness</p>
+          <h1>Pure Organic Grains &amp; Superfoods from Gramina Farm</h1>
+          <p>Experience the taste of carefully grown, pesticide-free millets, pulses, flours, and cold-pressed oils crafted for health and heritage.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#products">Explore Range</a>
+            <a class="secondary-btn" href="#about">Our Story</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://cdn.shopify.com/s/files/1/0482/6057/9482/collections/4.png?v=1747942827" alt="Organic farm produce" />
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container section-intro">
+        <h2>About Gramina Organic Farm</h2>
+        <p>We are a community-driven organic farm with a mission to make clean, nutritious food accessible. From seed selection to packaging, each step follows sustainable, eco-friendly practices.</p>
+      </div>
+      <div class="container cards-grid">
+        <article class="info-card">
+          <h3>100% Certified Organic</h3>
+          <p>No chemical fertilizers, no pesticides. Every batch is third-party tested and certified.</p>
+        </article>
+        <article class="info-card">
+          <h3>Ethical &amp; Fair</h3>
+          <p>We support farmers with fair trade pricing and promote regenerative agriculture.</p>
+        </article>
+        <article class="info-card">
+          <h3>Sustainably Packed</h3>
+          <p>Biodegradable, reusable and minimal packaging to protect the planet and your food.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container section-intro">
+        <h2>Our Products</h2>
+        <p>Handpicked essentials for your healthy lifestyle. Shop in single packs or value bundles.</p>
+      </div>
+      <div class="container products-grid">
+        <article class="product-tab">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7FoCPXITObn5euEmiVqb0ovPylDDfLgb_XA&s
+" alt="Organic millet" />
+          <h3>Organic Millets</h3>
+          <p>Finger millet, pearl millet, foxtail millet sourced from smallholder farms.</p>
+          <span>₹180 / kg</span>
+          <button class="add-to-cart-btn" data-name="Organic Millets" data-price="180">Add to Cart</button>
+        </article>
+        <article class="product-tab">
+          <img src="https://nri.org/images/images/nri-news/2026/Pulses.webp" alt="Organic pulses" />
+          <h3>Natural Pulses</h3>
+          <p>Green moong, urad, chana and more legumes, rinsed and sun-dried.</p>
+          <span>₹220 / kg</span>
+          <button class="add-to-cart-btn" data-name="Natural Pulses" data-price="220">Add to Cart</button>
+        </article>
+        <article class="product-tab">
+          <img src="https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-77892628/77892628.jpg" alt="Flour" />
+          <h3>Stone-ground Flours</h3>
+          <p>Whole grain atta, ragi flour, jowar flour with retained nutrients and aroma.</p>
+          <span>₹140 / kg</span>
+          <button class="add-to-cart-btn" data-name="Stone-ground Flours" data-price="140">Add to Cart</button>
+        </article>
+
+        <article class="product-tab">
+          <img src="https://lakdighanaoil.com/wp-content/uploads/2023/09/glass-jar-with-raw-white-kidney-beans-raw-nest-pasta-gray-table.jpg" alt="Cold pressed oil" />
+          <h3>Cold-Pressed Oils</h3>
+          <p>Sesame, mustard, and coconut oils pressed in small batches for purity.</p>
+          <span>₹320 / L</span>
+          <button class="add-to-cart-btn" data-name="Cold-Pressed Oils" data-price="320">Add to Cart</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+      <div class="container section-intro">
+        <h2>Why Choose Us</h2>
+        <p>Benefits that make a difference for your body, community, and the earth.</p>
+      </div>
+      <div class="container benefits-grid">
+        <article class="benefit-card"><h3>Nutritious</h3><p>High fiber, low glycemic, loaded with micronutrients.</p></article>
+        <article class="benefit-card"><h3>Transparent</h3><p>Batch traceability, lab-tested, no hidden ingredients.</p></article>
+        <article class="benefit-card"><h3>Local</h3><p>Supports local farmers and keeps the supply chain short.</p></article>
+        <article class="benefit-card"><h3>Waste-cutting</h3><p>Zero food waste policy with carefully managed harvest cycles.</p></article>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container section-intro">
+        <h2>Customer Love</h2>
+      </div>
+      <div class="container testimonials-grid">
+        <article class="testimonial-card">
+          <p>"Best organic millet I’ve ever tasted — my family switched from store flour completely."</p>
+          <strong>- Meera K.</strong>
+        </article>
+        <article class="testimonial-card">
+          <p>"The quality is consistent and the delivery is always on time. Highly recommended."</p>
+          <strong>- Amit S.</strong>
+        </article>
+        <article class="testimonial-card">
+          <p>"Finally I can buy pure cold-pressed oil from a brand I trust. Wonderful service!"</p>
+          <strong>- Priya N.</strong>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">Gramina</a>
+        <p>Organic food made with heart. Fresh, nutritious, and truly sustainable.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <a href="#products">Products</a>
+        <a href="#benefits">Benefits</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
+        <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Gramina Organic Farm. All rights reserved.</p>
+    </div>
+  </footer>
+<div id="cart-sidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <p>Total: ₹<span id="cart-total">0</span></p>
+    <a href="contact.html" class="primary-btn">Place Order</a>
+  </div>
+</div>
+<div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+<script>
+  let cart = JSON.parse(localStorage.getItem('gramina-cart') || '[]');
+
+  function saveCart() {
+    localStorage.setItem('gramina-cart', JSON.stringify(cart));
+  }
+
+  function updateCartCount() {
+    const total = cart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('cart-count').textContent = total;
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cart-items');
+    if (cart.length === 0) {
+      container.innerHTML = '<p style="color:#888;margin-top:1rem">Your cart is empty.</p>';
+    } else {
+      container.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+          <div>
+            <strong>${item.name}</strong><br/>
+            <small>₹${item.price} × ${item.qty}</small>
+          </div>
+          <div class="cart-item-controls">
+            <button onclick="changeQty(${i}, -1)">−</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${i}, 1)">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    document.getElementById('cart-total').textContent = total;
+    updateCartCount();
+  }
+
+  function addToCart(name, price) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) existing.qty++;
+    else cart.push({ name, price, qty: 1 });
+    saveCart();
+    renderCart();
+    toggleCart(true); // open cart on add
+  }
+
+  function changeQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) cart.splice(index, 1);
+    saveCart();
+    renderCart();
+  }
+
+  function toggleCart(forceOpen) {
+    const sidebar = document.getElementById('cart-sidebar');
+    const overlay = document.getElementById('cart-overlay');
+    const isOpen = sidebar.classList.contains('open');
+    if (forceOpen === true || !isOpen) {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+    } else {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+    }
+  }
+
+  // Wire up buttons
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      addToCart(btn.dataset.name, parseInt(btn.dataset.price));
+    });
+  });
+
+  renderCart(); // init on page load
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Gramina Organic Farm</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.0"></script>
+</head>
+<body>
+  <main>
+    <section class="contact">
+      <div class="container section-intro">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us. Place an order or ask questions. We'll respond within 24 hours.</p>
+      </div>
+      <div class="container contact-grid">
+        <div class="contact-form">
+          <h2>Get in Touch</h2>
+          <p>Place an order or ask questions. We'll respond within 24 hours.</p>
+          <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button class="primary-btn" type="submit" id="submitBtn">Send Message</button>
+            <div id="formMessage" class="form-message"></div>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>Farm Office</h3>
+          <p>123 Green Lane, Village Town, State - 456789</p>
+          <p>Email: info@graminaorganicfarm.com</p>
+          <p>Phone: +91 98765 43210</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.0000000000005!2d90.00000000000001!3d23.000000000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAwJzAwLjAiTiA5MMKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1610000000000!5m2!1sen!2sin" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const SUPABASE_URL = 'https://vbrssytmfgoaxkndmumw.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZicnNzeXRtZmdvYXhrbmRtdW13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ3NTk3MDAsImV4cCI6MjA5MDMzNTcwMH0.LenYG7IC0Rclb7UpgcwdqVIGtez74RACoex2b8lLva8';
+
+    const { createClient } = window.supabase;
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formMessage.textContent = '';
+
+      try {
+        const { data, error } = await supabase
+          .from('feedback')
+          .insert([
+            {
+              name: name,
+              email: email,
+              phone: phone,
+              message: message
+            }
+          ]);
+
+        if (error) throw error;
+
+        // Success - redirect to thank you page
+        window.location.href = 'thank-you.html';
+      } catch (error) {
+        console.error('Error:', error);
+        formMessage.textContent = 'Error sending message. Please try again.';
+        formMessage.style.color = '#d32f2f';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>
